@@ -103,6 +103,7 @@ def fid_inputs_to_metric(feat_extractor, **kwargs):
         save_path = get_kwarg("cache_root", kwargs)
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         np.savez(save_path, **stats_1)
+        print(f"Stats file for input1 is saved in {save_path}.")
     #### End of insertion by @qjin
 
     vprint(verbose, f"Extracting statistics from input 2")
