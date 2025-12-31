@@ -57,4 +57,7 @@ DEFAULTS = {
     "rng_seed": 2020,
     "save_cpu_ram": False,
     "verbose": True,
+    #### Inserted by @qjin
+    "save_stats_only": False,
+    #### End of insertion by @qjin
 }

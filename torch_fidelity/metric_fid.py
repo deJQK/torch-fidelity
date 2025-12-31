@@ -2,6 +2,10 @@
 #   https://github.com/bioinf-jku/TTUR/blob/master/fid.py commit id d4baae8
 #   Distributed under Apache License 2.0: https://github.com/bioinf-jku/TTUR/blob/master/LICENSE
 
+#### Inserted by @qjin
+import os
+#### End of insertion by @qjin
+
 import numpy as np
 import torch
 
@@ -93,6 +97,13 @@ def fid_inputs_to_metric(feat_extractor, **kwargs):
 
     vprint(verbose, f"Extracting statistics from input 1")
     stats_1 = fid_input_id_to_statistics_cached(1, feat_extractor, feat_layer_name, **kwargs)
+
+    #### Inserted by @qjin
+    if get_kwarg("cache", kwargs) and get_kwarg("cache_root", kwargs) and get_kwarg("save_stats_only", kwargs):
+        save_path = get_kwarg("cache_root", kwargs)
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        np.savez(save_path, **stats_1)
+    #### End of insertion by @qjin
 
     vprint(verbose, f"Extracting statistics from input 2")
     stats_2 = fid_input_id_to_statistics_cached(2, feat_extractor, feat_layer_name, **kwargs)

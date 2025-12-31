@@ -310,6 +310,11 @@ def calculate_metrics(**kwargs):
 
         verbose (bool): Output progress information to STDERR. Default: `True`.
 
+        #### Inserted by @qjin
+        save_stats_only (bool): Will only save stats. Cache need to be true and cache_root should be provided.
+            Default: `False`
+        #### End of insertion by @qjin
+
     Returns:
 
         : Dictionary of metrics with a subset of the following keys:
