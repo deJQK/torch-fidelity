@@ -100,8 +100,10 @@ def fid_inputs_to_metric(feat_extractor, **kwargs):
 
     #### Inserted by @qjin
     if get_kwarg("cache", kwargs) and get_kwarg("cache_root", kwargs) and get_kwarg("save_stats_only", kwargs):
-        save_path = get_kwarg("cache_root", kwargs)
-        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        save_dir = get_kwarg("cache_root", kwargs)
+        stats_filename = get_kwarg("stats_filename", kwargs)
+        os.makedirs(save_dir, exist_ok=True)
+        save_path = os.path.join(save_dir, stats_filename)
         np.savez(save_path, **stats_1)
         print(f"Stats file for input1 is saved in {save_path}.")
     #### End of insertion by @qjin

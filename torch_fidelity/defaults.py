@@ -59,5 +59,6 @@ DEFAULTS = {
     "verbose": True,
     #### Inserted by @qjin
     "save_stats_only": False,
+    "stats_filename": 'input1_stats.npz',
     #### End of insertion by @qjin
 }

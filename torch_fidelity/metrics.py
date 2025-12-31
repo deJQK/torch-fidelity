@@ -313,6 +313,8 @@ def calculate_metrics(**kwargs):
         #### Inserted by @qjin
         save_stats_only (bool): Will only save stats. Cache need to be true and cache_root should be provided.
             Default: `False`
+        stats_filename (str): The filename to save the stats.
+            Default: `'input1_stats.npz'`
         #### End of insertion by @qjin
 
     Returns:
